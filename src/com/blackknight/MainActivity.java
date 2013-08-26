@@ -1,6 +1,5 @@
 package com.blackknight;
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -36,23 +35,16 @@ public class MainActivity extends Activity {
                 "Gauge",
                 "Geo Chart",
                 "Geo Map",
-                "Image Chart",
-                "Image Area Chart",
-                "Image Bar Chart",
-                "Image Candlestick Chart",
-                "Image Line Chart",
-                "Image Pie Chart",
-                "Intensity Map",
                 "Line Chart",
-                "Motion Chart",
+                "Map",
                 "Org Chart",
-                "Pie Chart",
-                "Pie Chart 3D",
-                "Scatter Chart",
-                "Sparkline",
-                "Stepped Area Chart New!",
+                "ScatterChart",
+                "Stepped Area Chart",
                 "Table",
-                "Tree Map "};
+                "Timelines",
+                "Treemap",
+                "PieChart3d"
+                };
 
 		final String[] outraInformacao = new String[] { "Capturar Informações",
 
@@ -70,13 +62,11 @@ public class MainActivity extends Activity {
 		tspec2.setContent(R.id.tab2);
 		tabs.addTab(tspec2);
 
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-				android.R.layout.simple_list_item_1, charts);
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, charts);
 		list1 = (ListView) findViewById(R.id.listView1);
 		list1.setAdapter(adapter);
 
-		ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this,
-				android.R.layout.simple_list_item_1, outraInformacao);
+		ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, outraInformacao);
 		list2 = (ListView) findViewById(R.id.listView2);
 		list2.setAdapter(adapter1);
 
@@ -103,7 +93,6 @@ public class MainActivity extends Activity {
                         Intent intent2 = new Intent();
                         intent2.setClass(MainActivity.this, AreaChart.class);
                         startActivity(intent2);
-
 
                         break;
                     case 3://Bar Chart
@@ -137,82 +126,91 @@ public class MainActivity extends Activity {
                         startActivity(intent7);
 
                         break;
-                    case 8://Roteiro Nova Iguaçu
+                    case 8://Gauge
+                        Intent intent8 = new Intent();
+                        intent8.setClass(MainActivity.this, Gauge.class);
+                        startActivity(intent8);
 
                         break;
 
-                    case 9://Roteiro Petrópolis
+                    case 9://Geo Chart
+                        Intent intent9 = new Intent();
+                        intent9.setClass(MainActivity.this, GeoChart.class);
+                        startActivity(intent9);
+
 
                         break;
 
-                    case 10://Roteiro Tijuca
+                    case 10://Geo Map Chart
+                        Intent intent10 = new Intent();
+                        intent10.setClass(MainActivity.this, GeoMap.class);
+                        startActivity(intent10);
 
                         break;
 
-                    case 11://Roteiro Complementar(van) - Rocha Miranda
+                    case 11://Line Chart
+                        Intent intent11 = new Intent();
+                        intent11.setClass(MainActivity.this, LineChart.class);
+                        startActivity(intent11);
 
                         break;
 
-                    case 12://Roteiro Complementar(van) - São Gonçalo
+                    case 12://Map
+                        Intent intent12 = new Intent();
+                        intent12.setClass(MainActivity.this, Map.class);
+                        startActivity(intent12);
 
                         break;
 
-                    case 13://Roteiro Complementar (van) - Iha do Governador
+                    case 13://Org Chart
+                        Intent intent13 = new Intent();
+                        intent13.setClass(MainActivity.this, OrgChart.class);
+                        startActivity(intent13);
 
                         break;
 
-                    case 15://Roteiro Adrianópolis - Barra
+                    case 14://Scatter Chart
+                        Intent intent14 = new Intent();
+                        intent14.setClass(MainActivity.this, ScatterChart.class);
+                        startActivity(intent14);
 
                         break;
 
-                    case 16://Roteiro Adrianópolis - Cabuçu ‎
+                    case 15://Stepped Area Chart‎
+                        Intent intent15 = new Intent();
+                        intent15.setClass(MainActivity.this, SteppedAreaChart.class);
+                        startActivity(intent15);
 
                         break;
 
-                    case 17://Roteiro Adrianópolis - Campo Grande ‎
+                    case 16://Table
+                        Intent intent16 = new Intent();
+                        intent16.setClass(MainActivity.this, Table.class);
+                        startActivity(intent16);
+                        break;
+
+                    case 17://Timelines
+
+                        Intent intent17 = new Intent();
+                        intent17.setClass(MainActivity.this, Timelines.class);
+                        startActivity(intent17);
+                        break;
+
+                    case 18://Treemap
+                        Intent intent18 = new Intent();
+                        intent18.setClass(MainActivity.this, Treemap.class);
+                        startActivity(intent18);
 
                         break;
 
-                    case 18://Roteiro Adrianópolis - Caxias
+                    case 19://Pie Chart 3d‎
 
-                        break;
-
-                    case 19://Roteiro Adrianópolis - Ilha
-
-                        break;
-
-                    case 20://Roteiro Adrianópolis - Itaipu ‎
-
-                        break;
-
-                    case 21://Roteiro Adrianópolis - Tijuca ‎
-
-                        break;
-
-                    case 22://Roteiro Adrianópolis - Zona Sul
-
-                        break;
-
-                    case 23://Roteiro Adrianópolis - Zona Sul
-
-                        break;
-
-                    case 24://Pie Chart 3D
-
-                        Intent intent25 = new Intent();
-                        intent25.setClass(MainActivity.this, PieChart3d.class);
-                        startActivity(intent25);
-
-                        break;
-
-                    case 25:
-
-
-
+                        Intent intent19 = new Intent();
+                        intent19.setClass(MainActivity.this, PieChart3d.class);
+                        startActivity(intent19);
                         break;
 
                 }
-
             }
         });
 

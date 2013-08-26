@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 @SuppressLint("SetJavaScriptEnabled")
-public class BarChart extends Activity {
+public class Timelines extends Activity {
     private final String TAG = getClass().getSimpleName();
 
     public static final String ASSET_PATH = "file:///android_asset/";
@@ -27,7 +27,7 @@ public class BarChart extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.barchart);
+        setContentView(R.layout.timelines);
         getActionBar().setDisplayHomeAsUpEnabled(true);
 
         webView = (WebView) findViewById(R.id.web_view);
@@ -39,13 +39,12 @@ public class BarChart extends Activity {
         loadChart();
     }
 
-
     private void loadChart() {
 
         String content = null;
         try {
             AssetManager assetManager = getAssets();
-            InputStream in = assetManager.open("BarChart.html");
+            InputStream in = assetManager.open("Timelines.html");
             byte[] bytes = readFully(in);
             content = new String(bytes, "UTF-8");
         } catch (IOException e) {
